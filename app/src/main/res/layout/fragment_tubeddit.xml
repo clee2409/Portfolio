@@ -2,13 +2,15 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".SplashScreenFragment">
+             android:layout_height="1500dp"
+             tools:context=".TubedditFragment"
+            android:background="@color/Blue_Black_Lighter">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
+            android:text="Tubeddit Frag"
+    android:layout_gravity="center"
+    android:gravity="center"/>
 
 </FrameLayout>
