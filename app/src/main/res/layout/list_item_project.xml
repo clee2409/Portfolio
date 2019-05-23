@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/Blue_Black_Lighter">
+
+    <TextView
+        android:id="@+id/project_part_description_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tubeddit Frag"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+    <ImageView
+        android:id="@+id/project_part_image_iv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+</LinearLayout>

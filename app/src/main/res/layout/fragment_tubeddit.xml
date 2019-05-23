@@ -2,15 +2,15 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
-             android:layout_height="1500dp"
+             android:layout_height="match_parent"
              tools:context=".TubedditFragment"
             android:background="@color/Blue_Black_Lighter">
 
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Tubeddit Frag"
-    android:layout_gravity="center"
-    android:gravity="center"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/project_rv">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </FrameLayout>
