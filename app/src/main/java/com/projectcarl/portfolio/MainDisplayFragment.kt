@@ -44,12 +44,12 @@ class MainDisplayFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mViewPager = view.findViewById(R.id.reddit_search_pager)
+        mViewPager = reddit_search_pager
         mAdapter = ViewPagerAdapter(childFragmentManager)
         mViewPager.setAdapter(mAdapter)
         val tabLayout = tabs_layout
         tabLayout.setupWithViewPager(mViewPager)
-        (activity as AppCompatActivity).setSupportActionBar(custom_toolbar)
+        //(activity as AppCompatActivity).setSupportActionBar(custom_toolbar)
         mViewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
             override fun onPageScrollStateChanged(state: Int) {
             }
@@ -89,8 +89,6 @@ class MainDisplayFragment : Fragment() {
                 }
             }
         }
-
-
 
         override fun getPageTitle(position: Int): CharSequence? {
             when (position) {

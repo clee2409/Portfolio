@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.projectcarl.portfolio.data.ProjectPart
@@ -49,6 +50,7 @@ class TubedditFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         project_rv.layoutManager = LinearLayoutManager(context)
         project_rv.setAdapter(RecyclerViewAdapter())
+        PagerSnapHelper().attachToRecyclerView(project_rv)
     }
 
     override fun onResume() {
@@ -103,7 +105,6 @@ class TubedditFragment : Fragment() {
                 project_part_description_tv.setText(item.mDescription)
                 Glide.with(this@TubedditFragment).asGif().load(R.drawable.test_gif).into(project_part_image_iv)
             }
-
         }
     }
 }
