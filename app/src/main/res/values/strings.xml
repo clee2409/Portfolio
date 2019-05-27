@@ -3,4 +3,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_me">About Me</string>
+    <string name="about_this_app">About This App</string>
+    <string name="portfolio">Portfolio</string>
+    <string name="resume">Resume</string>
 </resources>

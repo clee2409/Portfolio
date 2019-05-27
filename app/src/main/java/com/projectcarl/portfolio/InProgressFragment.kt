@@ -43,6 +43,6 @@ class InProgressFragment : Fragment() {
         Log.d("onResume", "InProgressFragment")
         val color = ColorDrawable(ContextCompat.getColor(context as Context, R.color.Iguana_Green))
         (activity as AppCompatActivity).supportActionBar!!.setBackgroundDrawable(color)
-        (activity as AppCompatActivity).supportActionBar!!.setTitle("In Progress")
+        //(activity as AppCompatActivity).supportActionBar!!.setTitle("In Progress")
     }
 }

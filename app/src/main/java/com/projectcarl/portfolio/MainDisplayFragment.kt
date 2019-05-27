@@ -10,12 +10,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.Toolbar
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_main_display.*
 
 
@@ -33,6 +35,11 @@ class MainDisplayFragment : Fragment() {
     internal lateinit var mViewPager: ViewPager;
     internal lateinit var mAdapter: ViewPagerAdapter;
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        (activity as AppCompatActivity).supportActionBar!!.setTitle(getString(R.string.portfolio))
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,12 +51,18 @@ class MainDisplayFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        activity!!.findViewById<Toolbar>(R.id.main_activity_toolbar).visibility = View.GONE
+        //activity!!.findViewById<Toolbar>(R.id.main_activity_toolbar).setOnClickListener()
+        (activity as AppCompatActivity).setSupportActionBar(custom_toolbar)
+        (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        (activity as AppCompatActivity).supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_action_hamburger_menu)
+
         mViewPager = reddit_search_pager
         mAdapter = ViewPagerAdapter(childFragmentManager)
         mViewPager.setAdapter(mAdapter)
         val tabLayout = tabs_layout
         tabLayout.setupWithViewPager(mViewPager)
-        //(activity as AppCompatActivity).setSupportActionBar(custom_toolbar)
         mViewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
             override fun onPageScrollStateChanged(state: Int) {
             }
@@ -61,13 +74,13 @@ class MainDisplayFragment : Fragment() {
                     Log.d("onResume", "TubedditFragment")
                     val color = ColorDrawable(ContextCompat.getColor(context as Context, R.color.Tubeddit_Blue))
                     (activity as AppCompatActivity).supportActionBar!!.setBackgroundDrawable(color)
-                    (activity as AppCompatActivity).supportActionBar!!.setTitle("Tubeddit")
+                    //(activity as AppCompatActivity).supportActionBar!!.setTitle("Tubeddit")
                 }
                 1 -> {
                     Log.d("onResume", "InProgressFragment")
                     val color = ColorDrawable(ContextCompat.getColor(context as Context, R.color.Iguana_Green))
                     (activity as AppCompatActivity).supportActionBar!!.setBackgroundDrawable(color)
-                    (activity as AppCompatActivity).supportActionBar!!.setTitle("In Progress")
+                    //(activity as AppCompatActivity).supportActionBar!!.setTitle("In Progress")
                 }
             }
 
@@ -97,5 +110,15 @@ class MainDisplayFragment : Fragment() {
             }
             return super.getPageTitle(position)
         }
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        val mainActivityToolbar: Toolbar = activity!!.findViewById(R.id.main_activity_toolbar)
+        mainActivityToolbar.visibility = View.VISIBLE
+        (activity as AppCompatActivity).setSupportActionBar(mainActivityToolbar)
+        (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        (activity as AppCompatActivity).supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_action_hamburger_menu)
     }
 }

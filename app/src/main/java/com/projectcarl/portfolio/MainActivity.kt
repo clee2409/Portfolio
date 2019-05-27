@@ -3,17 +3,38 @@ package com.projectcarl.portfolio
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
-import androidx.appcompat.app.ActionBarDrawerToggle
+import android.widget.Toast
 import androidx.core.view.GravityCompat
-import kotlinx.android.synthetic.main.fragment_main_display.*
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            0 -> return true;
+            R.id.portfolio -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, MainDisplayFragment()).commit()
+                drawer_layout.closeDrawer(GravityCompat.START)
+                return true
+            }
+            R.id.resume -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, ResumeFragment()).commit()
+                drawer_layout.closeDrawer(GravityCompat.START)
+                return true
+            }
+            R.id.about_me -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, AboutMeFragment()).commit()
+                drawer_layout.closeDrawer(GravityCompat.START)
+                return true;
+            }
+            R.id.about_app -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, AboutThisAppFragment()).commit()
+                drawer_layout.closeDrawer(GravityCompat.START)
+                return true;
+            }
         }
         return false;
     }
@@ -30,7 +51,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         return false
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
