@@ -1,4 +1,4 @@
-# Portfolio
+# About This Repository
 
 Portfolio, a Kotlin Android App that beautifully showcases GIFs and features of my projects
 
