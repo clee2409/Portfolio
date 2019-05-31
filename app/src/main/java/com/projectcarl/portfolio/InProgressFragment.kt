@@ -41,8 +41,8 @@ class InProgressFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         Log.d("onResume", "InProgressFragment")
-        val color = ColorDrawable(ContextCompat.getColor(context as Context, R.color.Iguana_Green))
-        (activity as AppCompatActivity).supportActionBar!!.setBackgroundDrawable(color)
+        //val color = ColorDrawable(ContextCompat.getColor(context as Context, R.color.Iguana_Green))
+        //(activity as AppCompatActivity).supportActionBar!!.setBackgroundDrawable(color)
         //(activity as AppCompatActivity).supportActionBar!!.setTitle("In Progress")
     }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/Blue_Black_Darker</color>
+    <color name="colorPrimary">@color/Blue_Black_Lighter</color>
     <color name="colorPrimaryDark">@color/Blue_Black_Darker</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="Blue_Black_Darker">#121821</color>
-    <color name="Blue_Black_Lighter">#1c2533</color>
+    <color name="Blue_Black_Darker">#222830</color>
+    <color name="Blue_Black_Lighter">#323c46</color>
     <color name="Tubeddit_Blue">#98afc7</color>
 
     <color name="White">#FFFFFF</color>

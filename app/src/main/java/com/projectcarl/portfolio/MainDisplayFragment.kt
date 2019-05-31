@@ -35,11 +35,6 @@ class MainDisplayFragment : Fragment() {
     internal lateinit var mViewPager: ViewPager;
     internal lateinit var mAdapter: ViewPagerAdapter;
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        (activity as AppCompatActivity).supportActionBar!!.setTitle(getString(R.string.portfolio))
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,7 +46,7 @@ class MainDisplayFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        (activity as AppCompatActivity).supportActionBar!!.setTitle(getString(R.string.portfolio))
         activity!!.findViewById<Toolbar>(R.id.main_activity_toolbar).visibility = View.GONE
         //activity!!.findViewById<Toolbar>(R.id.main_activity_toolbar).setOnClickListener()
         (activity as AppCompatActivity).setSupportActionBar(custom_toolbar)
@@ -71,19 +66,16 @@ class MainDisplayFragment : Fragment() {
             override fun onPageSelected(position: Int) {
             when (position) {
                 0 -> {
-                    Log.d("onResume", "TubedditFragment")
-                    val color = ColorDrawable(ContextCompat.getColor(context as Context, R.color.Tubeddit_Blue))
-                    (activity as AppCompatActivity).supportActionBar!!.setBackgroundDrawable(color)
+                    //val color = ColorDrawable(ContextCompat.getColor(context as Context, R.color.Tubeddit_Blue))
+                    //(activity as AppCompatActivity).supportActionBar!!.setBackgroundDrawable(color)
                     //(activity as AppCompatActivity).supportActionBar!!.setTitle("Tubeddit")
                 }
                 1 -> {
-                    Log.d("onResume", "InProgressFragment")
-                    val color = ColorDrawable(ContextCompat.getColor(context as Context, R.color.Iguana_Green))
-                    (activity as AppCompatActivity).supportActionBar!!.setBackgroundDrawable(color)
+                    //val color = ColorDrawable(ContextCompat.getColor(context as Context, R.color.Iguana_Green))
+                    //(activity as AppCompatActivity).supportActionBar!!.setBackgroundDrawable(color)
                     //(activity as AppCompatActivity).supportActionBar!!.setTitle("In Progress")
                 }
             }
-
             }
         })
     }

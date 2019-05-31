@@ -8,19 +8,28 @@
     <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:elevation="4dp">
-        <androidx.appcompat.widget.Toolbar
+            app:elevation="4dp"
+        android:background="@color/Blue_Black_Darker">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-            android:id="@+id/custom_toolbar"
-            app:title="Portfolio"
-            app:titleTextColor="@color/White" />
-        <com.google.android.material.tabs.TabLayout
+                android:id="@+id/custom_toolbar"
+                app:title="Portfolio"
+                app:titleTextColor="@color/White"/>
+            <com.google.android.material.tabs.TabLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/tabs_layout"
                 app:tabMode="fixed"
-            app:tabTextColor="@color/White"/>
+                app:tabTextColor="@color/White"
+                app:tabIndicatorColor="@color/White"/>
+        </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager

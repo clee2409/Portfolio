@@ -14,7 +14,8 @@
             android:id="@+id/main_activity_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/Tyrian_Purple">
+            app:titleTextColor="@color/White"
+            android:background="@color/Blue_Black_Darker">
         </androidx.appcompat.widget.Toolbar>
         <FrameLayout
             xmlns:tools="http://schemas.android.com/tools"
@@ -31,6 +32,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        app:itemTextColor="@color/White"
         app:menu="@menu/drawer_menu"
         app:headerLayout="@layout/nav_header"/>
 
